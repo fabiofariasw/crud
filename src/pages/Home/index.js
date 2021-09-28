@@ -34,7 +34,7 @@ export function Home() {
             async function get() {
                 try {
                     const { data } = await api.get('/chamarotas/read')
-                    setData(data)
+                    setData(data.reverse())
                 } catch (error) {
                     console.log(error)
                 }
@@ -246,13 +246,13 @@ export function Home() {
                 >
                     <Column
                         field="_id"
-                        header="Code"
-                        sortable 
+                        header="Id"
+                        // sortable 
                     />
                     <Column
                         field="texto"
                         header="Descrição"
-                        sortable
+                        // sortable
                     />
                     <Column body={actionBodyTemplate} />
                 </DataTable>
